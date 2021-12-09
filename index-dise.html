@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>选底色</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height"/>
+    <style type="text/css">
+        *,body{
+            /*padding:0;*/
+            margin:0 auto;
+            width:450px;*/
+            width:100%;
+            height:100%;
+            /*position:center;
+            justify-content: center;*/
+            
+            
+        }
+        .div0{
+         width:450px;
+         height:100%;
+         background-image: url("img/bg.png");
+            background-repeat:no-repeat;
+            background-size: contain;
+            background-position:center;
+            position:relative;
+         
+        }
+        .buju{
+         position:absolute;
+         display:flex;
+         flex-direction:row;
+         justify-content: space-around;
+         flex-wrap: wrap;
+        }
+        .div1{
+         display:flex;
+         flex-direction:row;
+         justify-content: space-around;
+         flex-wrap: wrap;
+        }
+        .image1{
+         height:90px;
+         width:80px;
+      	position:relative;
+      	top:80%;
+      	padding-left:10%;
+        }
+        .image2{
+         height:90px;
+         width:80px;
+      		position:relative;
+      		top:80%;
+        }
+        .image3{
+         height:90px;
+         width:80px;
+      	position:relative;
+      	top:80%;
+        }
+        .image4{
+         height:90px;
+         width:80px;
+      position:relative;
+      top:80%;
+      padding-right:10%;
+        }
+        /*.back{
+         width:50px;
+         height:50px;
+         margin-left:70px;
+        }*/
+        .back img{
+          width: 36px;
+          height:36px;
+          position: absolute;
+          top:4%;
+          left:16%;
+          opacity:0.5;
+         }
+        .back img:hover{
+          opacity:1;
+          width:40px;
+        }
+        #bigtu{
+       display:flex;
+       justify-content:space-around;
+       left:25%;
+       top:11.9%;
+       height:56.6%;
+       width:50%;
+       position:absolute;
+       padding:0px;
+       border-radius:20px;
+      }
+      .xds{
+       font-size:20px;
+       text-decoration:none ;
+       color:black;
+       position:absolute;
+       left:25%;
+       top:93.5%;
+      }
+      .xta{
+       font-size:20px;
+       text-decoration:none ;
+       color:black;
+       position:absolute;
+       left:62%;
+       top:93.5%;
+      }
+    </style>
+    <script type="text/javascript">
+      function change1(){
+       document.getElementById("bigtu").src="img/bigbg1.png";
+      }
+      function change2(){
+       document.getElementById("bigtu").src="img/bigbg2.png";
+      }
+      function change3(){
+       document.getElementById("bigtu").src="img/bigbg3.png";
+      }
+      function change4(){
+       document.getElementById("bigtu").src="img/bigbg4.png";
+      }
+     </script>
+</head>
+  <body>
+   <div class="div0 ">
+    <div class="buju">
+    <div class="div1">
+     <img class="image1" src="img/bg1.png" onclick="change1()" touchstart="change1()"/>
+     <img class="image2" src="img/bg2.png" onclick="change2()" touchstart="change2()"/>
+     <img class="image3" src="img/bg3.png" onclick="change3()" touchstart="change3()"/>
+     <img class="image4" src="img/bg4.png" onclick="change4()" touchstart="change4()"/>
+    </div>
+    <a class="back" href=" " targer="_self" title="返回">
+    	<img class="fanhui" src="img/back.png" /></ a>
+    	<img id="bigtu" src="img/bigbg1.png"  />
+    <div class="div2">
+     <a class="xds" href="" target="_self" >选底色</ a>
+     <a class="xta" href="" target="_self" >选图案</ a>
+    </div>
+    
+     
+                 
+                -->
+   </div>
+   </div>
+  
+   
+  
+  
+ 
+</body>
+</html>
