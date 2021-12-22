@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>首页</title>
+		<style type="text/css">
+        html,body{
+            /*width:100%;
+            height:100%;
+            margin:0px;
+            background-color:#F7F7F0 ;
+            display: flex;
+        	justify-content: center;*/
+        	margin:0;
+            padding: 0;
+            background-color:#F7F7F0 ;
+        }
+        /*.bg{
+        	display:flex;
+        	weight:1024px;
+        	height:100%;/
+        	flex-direction:row;
+        	justify-content: center;
+        	
+        }*/
+        .kaishi{
+        	/*background-image: url("img/kaishi.png");*/
+        	position: fixed;
+    		top: 0;
+    		left: 0;
+        	background-repeat: no-repeat;
+    		background-size:100% 100%;
+    		transition: all 3s ease;
+        	/*width:650px;*/
+        	/*width: 100%;
+        	margin: auto;
+        	background-image: url("img/kaishi.png");
+        	background-repeat: no-repeat;
+        	background-size: cover;
+    		background-position:center;
+    		background-size:auto 100%;
+    		height:100%;*/
+        	/*height:100%;*/
+        	/*background-image: url("img/kaishi.png");
+        	background-repeat: no-repeat;
+        	background-size:auto 100%;
+        	background-position: center;
+        	display: flex;
+        	justify-content: center;*/
+        }
+        /*.pho{
+        	background-image: url("img/kaishi.png");
+        	background-repeat: no-repeat;
+        	background-size: cover;
+    		background-position:center;
+    		background-size:auto 100%;
+    		height:100%;
+        }*/
+        /*.pho img{
+        	margin: auto;
+        }*/
+        .anime{
+       		animation:moveDiv 5s ease 1;
+        }
+        @keyframes moveDiv {
+                0%{opacity: 0;}
+                100%{opacity: 1;}
+                /*0%{src: url(img/kaishi.png);}
+                100%{src: url(img/passing.png);}*/
+        }
+        .fan{
+        	
+        	/*transform: translate(100%,-100%);*/
+        }
+        .enter{
+        	/*height: 60px;
+        	width: 60px;
+        	background-image: url("img/right.png");
+        	background-repeat: no-repeat;
+        	background-size:auto 100%;
+        	background-position: center;*/
+        	position:absolute;
+        	top:88%;
+            left:76%;
+        	display: none;
+        }
+        .enter a{
+        	opacity:0.5;
+        }
+        .enter a:hover{
+        	opacity: 1;
+        }
+    </style>
+    <script type="text/javascript">
+        function pass(){
+        	document.getElementById("di").style.backgroundImage="url('img/passing.png')";
+        	document.getElementById("ks").src="img/words.png";
+        	document.getElementById("ks").className="anime";
+        	document.getElementById("ent").style.display = "block";
+        }
+    </script>
+	</head>
+	<body>
+		<div id="di" class="kaishi" style="height: 100%; overflow-y: auto !important; width: 100%;">
+			<img id="ks"  src="img/kaishi.png" style="height: 100%; overflow-y: auto !important; width: 100%;" onclick="pass()" />
+			<div id="ent" class="enter"><a href=" https://unicornql.github.io/sythree/index-xuan.html" target="_self" title="进入"><img class="fan" src="img/right.png" height="80%" width="80%" /></a></div>
+		</div>
+	</body>
+</html>
