@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    	<meta charset="utf-8">
+    	<title>选图案</title>
+    	<style type="text/css">
+    		html,body{
+            margin:0;
+            padding: 0;
+            background-color:#F7F7F0 ;
+            }
+        .kaishi{
+        	/*width:auto;
+        	height:100%;
+        	background-image: url("img/bg.png");
+            background-repeat:no-repeat;
+            background-size: cover;
+            background-position:center;*/
+           background-image: url("img/bg.png");
+           position: fixed;
+    		top: 0;
+    		left: 0;
+        	background-repeat: no-repeat;
+    		background-size:100% 100%;
+        }
+    		.wen{
+    			height: 100%;
+    			width: 80%;
+    			margin: 0px auto;
+    			display:flex;
+    			flex-direction:row;
+    			align-items: bottom;
+    			justify-content:space-around;
+    		}
+    		.image1{
+    			height:200px;
+    			/*left:30px;*/
+    			position:relative;
+    			top:80%;
+    			/*left: 5%;*/
+    		}
+    		.image2{
+    			height:200px;
+    			/*left:290px;*/
+    			/*left: 30px;*/
+    			position:relative;
+    			top:80%;
+    			/*left: 5%;*/
+    			/*display:flex;
+    			justify-content:space-around;*/
+    		}
+    		.image3{
+    			height:200px;
+    			/*left: 30px;*/
+    			/*left:540px;*/
+    			position:relative;
+    			top:80%;
+    			/*left: 5%;*/
+    		}
+    		.image4{
+    			height:200px;
+    			left: 30px;
+    			/*left:790px;*/
+    			position:relative;
+    			top:80%;
+    			/*left: 5%;*/
+    		}
+    		.left{
+    			width:100px;
+    			height: 100px;
+    			position:relative;
+    			margin-right: 40px;
+    			top:83%;
+    			/*left:5%;*/
+    		}
+    		.right{
+    			width:100px;
+    			height: 100px;
+    			position:relative;
+    			margin-left: 40px;
+    			top:83%;
+    			/*left: 4%;*/
+    		}
+    		.back img{
+        		width: 13%;
+        		height:6%;
+        		position: absolute;
+        		top:3%;
+        		left:8%;
+        		opacity:0.5;
+        	}
+        	.back img:hover{
+        		opacity:1;
+        		/*width:100px;*/
+        	}
+        	.xds{
+    			font-size:320%;
+    			text-decoration:none ;
+    			color:black;
+    			position:absolute;
+    			left:20%;
+    			top:93.5%;
+    		}
+    		.xta{
+    			font-size:320%;
+    			text-decoration:none ;
+    			color:black;
+    			position:absolute;
+    			right:20%;
+    			top:93.5%;
+    		}
+    		#datu{
+    			left:19.5%;
+    			top:20%;
+    			height:35%;
+    			width:60.5%;
+    			position:absolute;
+    			padding:0px;
+    		}
+    		@keyframes first{
+    			0%{opacity:0}
+    			50%{opacity:0}
+      			100%{opacity:1}
+      		}
+      		#btnsavaImg{
+      			width: 13%;
+        		height:6%;
+        		position: absolute;
+        		top:3%;
+        		right:10%;
+        		opacity:0.5;
+      		}
+      		#btnsavaImg img{
+      			position: absolute;
+      			left:3%;
+      		}
+      		#btnsavaImg:hover{
+        		opacity:1;
+        		/*width:100px;*/
+        	}
+    	</style>
+    	<script type="text/javascript" src="js/jquery.min.js"></script>
+    	<script type="text/javascript">
+    		var index = 1;
+    		var load = document.getElementById("down");
+    		function changeright(){
+    			index++;
+    			if(index>2){
+    				index=2;
+    			}
+  
+    			var tu1 = document.getElementById("huan1");
+    			tu1.className="image2";
+    			tu1.src="img/xianhe.png";
+    			var tu2 = document.getElementById("huan2");
+    			tu2.className="image3";
+    			tu2.src="img/yun.png";
+    			var tu3 = document.getElementById("huan3");
+    			tu3.className="image4";
+    			tu3.src="img/shan.png";
+    		}
+    		function changeleft(){
+    			index--;
+    			if(index<1){
+    				index = 1;
+    			}
+    			var tu1 = document.getElementById("huan1");
+    			tu1.className="image1";
+    			tu1.src="img/baihua.png";
+    			var tu2 = document.getElementById("huan2");
+    			tu2.className="image2";
+    			tu2.src="img/xianhe.png";
+    			var tu3 = document.getElementById("huan3");
+    			tu3.className="image3";
+    			tu3.src="img/yun.png";
+    		}
+    		function change1(){
+    			//var a = document.getElementById("huan1");
+    			//var hua = document.getElementById("datu");
+    			$("#datu").attr("src",$('#huan1').attr('src'));
+    			//hua.src=a.src;
+    			load= a.src;
+    		}
+    		function change2(){
+    			$("#datu").attr("src",$('#huan2').attr('src'));
+    			//var b = document.getElementById("huan2");
+    			//var he = document.getElementById("datu");
+    			
+    			//he.src=b.src;
+    			load.href = b.src;
+    		}
+    		function change3(){
+    			
+    			//var c = document.getElementById("huan3");
+    			//var yun = document.getElementById("datu");
+    			$("#datu").attr("src",$('#huan3').attr('src'));
+    			//yun.src=c.src;
+    			load.href = c.src;
+    		}
+    		function Download(){
+        //cavas 保存图片到本地  js 实现
+        //------------------------------------------------------------------------
+        //1.确定图片的类型  获取到的图片格式 data:image/Png;base64,...... 
+        		var type ='png';//你想要什么图片格式 就选什么吧
+        		var d=document.getElementById("cavasimg");
+        		var imgdata=d.toDataURL(type);
+        //2.0 将mime-type改为image/octet-stream,强制让浏览器下载
+        		var fixtype=function(type){
+            		type=type.toLocaleLowerCase().replace(/jpg/i,'jpeg');
+            		var r=type.match(/png|jpeg|bmp|gif/)[0];
+            		return 'image/'+r;
+        		};
+        		imgdata=imgdata.replace(fixtype(type),'image/octet-stream');
+        //3.0 将图片保存到本地
+        		var savaFile=function(data,filename){
+            		var save_link=document.createElementNS('http://www.w3.org/1999/xhtml', 'a');
+            		save_link.href=data;
+            		save_link.download=filename;
+            		var event=document.createEvent('MouseEvents');
+            		event.initMouseEvent('click',true,false,window,0,0,0,0,0,false,false,false,false,0,null);
+            		save_link.dispatchEvent(event);
+        		};
+        		var filename=''+new Date().getSeconds()+'.'+type;  
+        
+        		savaFile(imgdata,filename);
+        	};
+    	</script>
+	</head>
+	<body>
+		<div class="kaishi" style="height: 100%; overflow-y: auto !important; width: 100%;">
+			<!--纹样显示-->
+			<div class="wen">
+				<!--左滑按钮-->
+				<img class="left" src="img/move2.png"  onclick="changeleft()" touchstart="changeleft()"/>
+				<!--三个纹样-->
+				
+				<img class="image1" id="huan1" src="img/baihua.png" onclick="change1()"/>
+				<img class="image2" id="huan2" src="img/xianhe.png" onclick="change2()"/>
+				<img class="image3" id="huan3" src="img/yun.png" onclick="change3()"/>
+				<!--<img class="image4" src="img/shan.png" />-->
+				<!--右滑按钮-->
+				<img id="datu"> 
+				<img class="right" src="img/move4.png" onclick="changeright()" touchstart="changeright()"/>
+			</div>
+			<a class="back" href="https://unicornql.github.io/sythree/index-xuan.html" target="_self" title="返回"><img src="img/back.png"/></a>
+			
+			<!--<a href="https://unicornql.github.io/sythree/index-xuan" target=_self title="点击"><img class="image6" src="img/back.png" /></a>-->
+			<a class="xds" href="https://unicornql.github.io/sythree/index-dise.html" target="self" >选底色</a>
+			<a class="xta" href="" target="self" >选图案</a>
+			
+			<a id="down" href="img/baihua.png" download="lumia.png">
+  				<!--
+                  	<img id="btnsavaImg" src="img/finish.png"  onclick="Download()"/>
+                  -->
+  				<!--<a id="btnsavaImg" href="https://unicornql.github.io/sythree/index-end.html" targer="_self" title="返回">-->
+  					<img id="btnsavaImg" src="img/finish.png"  onclick="Download()"/>
+  				<!--</a>-->
+  				<!--<input type="button" id="btnsavaImg" value="完成" onclick="Download()"/>-->
+            </a>
+            <a id="down" href="img/baihua.png" download="lumia.png">
+            	<a id="btnsavaImg" href="https://unicornql.github.io/sythree/index-end.html" targer="_self" title="返回">
+            </a>
+		</div>
+		
+	</body>
+</html>
